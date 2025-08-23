@@ -26,6 +26,5 @@ WORKDIR /app
 # Exponer el puerto donde correrá Langflow
 EXPOSE 7860
 
-# Comando de inicio
-
-CMD ["sh", "-c", "langflow run --host 0.0.0.0 --port ${PORT}"]
+# Comando de inicio (usa PORT de Railway o fallback 7860)
+CMD ["sh", "-c", "langflow run --host 0.0.0.0 --port ${PORT:-7860}"]
