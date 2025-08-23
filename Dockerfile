@@ -27,4 +27,5 @@ WORKDIR /app
 EXPOSE 7860
 
 # Comando de inicio
-CMD ["langflow", "run", "--host", "0.0.0.0", "--port", "7860"]
+
+CMD ["sh", "-c", "langflow run --host 0.0.0.0 --port ${PORT}"]
